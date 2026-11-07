@@ -29,7 +29,7 @@ giga_tech_war_moon_specialization = {
 
 	ai_weight = {
 		factor = @giga_aiweight_multiplier_strong	#Moons!
-		modifier = { factor = @giga_tech_weight_boost_large is_militarist = yes }
+		modifier = { factor = @giga_tech_weight_boost_3 is_militarist = yes }
 	}
 }
 
@@ -769,7 +769,7 @@ giga_tech_terraform_gas = {
 
 		# it's sort of a habitat
 		modifier = {
-			factor = @giga_tech_weight_boost_medium
+			factor = @giga_tech_weight_boost_2
 			is_void_dweller_empire = yes
 		}
 
@@ -809,7 +809,7 @@ giga_tech_disco_moon = {
 	}
 
 	weight_modifier = {
-		inline_script = technology/tech_weight_boni/judgemental_tech_weight_bonus
+		inline_script = technology/tech_weight_boni/authority_tech_weight_bonus
 		inline_script = technology/tech_weight_boni/spiritualist_tech_weight_bonus
 	}
 

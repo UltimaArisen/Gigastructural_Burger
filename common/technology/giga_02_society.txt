@@ -76,7 +76,7 @@ giga_tech_orbital_elysium = {
 		}
 
 		inline_script = technology/tech_weight_boni/expansionist_tech_weight_bonus
-		inline_script = technology/tech_weight_boni/judgemental_tech_weight_bonus
+		inline_script = technology/tech_weight_boni/authority_tech_weight_bonus
 
 		modifier = { factor = 0
 			or = {
@@ -166,15 +166,8 @@ giga_tech_orbital_artificial_eco = {
 	}
 
 	weight_modifier = {
-		# militarists get engineering kilo, scientists get physics kilo, they get downprioritized for society
-		# eco-centric and genetics focused empires get priority
-		inline_script = technology/tech_weight_boni/ecofriendly_tech_weight_bonus # contains materialist nerf
+		# genetics/hives get priority
 		inline_script = technology/tech_weight_boni/hive_or_genetics_tech_weight_bonus
-
-		modifier = {
-			factor = @giga_tech_weight_malus_large
-			is_militarist = yes
-		}
 
 		inline_script = {
 			script = technology/tech_weight_boni/neighbor_spread_tech_weight_bonus
@@ -188,34 +181,15 @@ giga_tech_orbital_artificial_eco = {
 }
 
 giga_tech_planetary_seeder_nexus = {
-	cost = @tier3cost2
 	area = society
+	cost = @tier3cost2
 	tier = 3
 	category = { biology }
-	is_rare = no
-	#Needs either:
-	#IF Catalytic Processing or Bioship, then just Gene Tailoring
-	#OR Bio-Ascension
-	prerequisites = {
-		# tech_gene_tailoring
-		OR = {
-			tech_cruisers
-			tech_harbingers
-		}
-	}
 	weight = @tier3weight2
-	prereqfor_desc = {
-		custom = { title = "allow_planetary_seeder_nexus"	desc = "desc_planetary_seeder_nexus" }
-	}
-	modifier = {
-		country_resource_max_add = 2500
-		country_food_produces_mult = 0.05
-		giga_planetary_seeder_nexus_limit_add = 3
-	}
 
 	potential = {
 		OR = {
-			has_technology = tech_gene_tailoring
+			has_technology = tech_food_processing_2
 			AND = {
 				is_machine_empire = yes
 				resource_expenses_compare = {
@@ -232,25 +206,35 @@ giga_tech_planetary_seeder_nexus = {
 		}
 	}
 
+	modifier = {
+		giga_planetary_seeder_nexus_limit_add = 3
+	}
+
 	weight_modifier = {
-		# militarists get engineering kilo, scientists get physics kilo, they get downprioritized for society
-		# eco-centric and genetics focused empires get priority
-		inline_script = technology/tech_weight_boni/ecofriendly_tech_weight_bonus # contains materialist nerf
+		factor = 0.5
 		inline_script = technology/tech_weight_boni/hive_or_genetics_tech_weight_bonus
 
 		modifier = {
-			factor = @giga_tech_weight_malus_large
-			is_militarist = yes
+			factor = 0.2
+			NOT = { has_councilor_with_kilo_brain = { TRAIT = biology } }
 		}
 
-		inline_script = {
-			script = technology/tech_weight_boni/neighbor_spread_tech_weight_bonus
-			TECHNOLOGY = giga_tech_planetary_seeder_nexus
+
+		modifier = {
+			factor = 2
+			tech_weight_factor_check_4_stage = { megastructure = planetary_seeder_nexus}
+		}
+	}
+
+	prereqfor_desc = {
+		custom = {
+			title = "allow_planetary_seeder_nexus"
+			desc = "desc_planetary_seeder_nexus"
 		}
 	}
 
 	ai_weight = {
-		factor = @giga_aiweight_multiplier_medium	#Science is good.
+		factor = @giga_aiweight_multiplier_medium
 	}
 }
 
@@ -281,12 +265,11 @@ giga_tech_yggdrasil_orchid = {
 
 	weight_modifier = {
 		modifier = {
-			factor = @giga_tech_weight_boost_greater
+			factor = @giga_tech_weight_boost_4
 			is_catalytic_empire = yes
 		}
 
 		inline_script = technology/tech_weight_boni/hive_or_genetics_tech_weight_bonus
-		inline_script = technology/tech_weight_boni/ecofriendly_tech_weight_bonus
 
 		inline_script = {
 			script = technologies/rare_technologies_weight_modifiers
@@ -431,7 +414,6 @@ giga_tech_terraform_barren = {
 	}
 
 	weight_modifier = {
-		modifier = { factor = 0.50 has_ascension_perk = ap_world_shaper }
 	
 		inline_script = technology/tech_weight_boni/expansionist_tech_weight_bonus
 		inline_script = technology/tech_weight_boni/ecofriendly_tech_weight_bonus
@@ -506,7 +488,6 @@ giga_tech_terraform_toxic = {
 	}
 
 	weight_modifier = {
-		modifier = { factor = 0.50 has_ascension_perk = ap_world_shaper }
 
 		inline_script = technology/tech_weight_boni/ecofriendly_tech_weight_bonus
 
@@ -545,7 +526,6 @@ giga_tech_terraform_molten = {
 	}
 
 	weight_modifier = {
-		modifier = { factor = 0.50 has_ascension_perk = ap_world_shaper }
 
 		inline_script = technology/tech_weight_boni/ecofriendly_tech_weight_bonus
 
@@ -675,26 +655,26 @@ giga_tech_stellar_ring_habitat = {
 		factor = 0.25
 
 		modifier = {
-			factor = @giga_tech_weight_malus_large
+			factor = @giga_tech_weight_malus_2
 			is_militarist = yes
 		}
 		modifier = {
-			factor = @giga_tech_weight_boost_large
+			factor = @giga_tech_weight_boost_3
 			is_pacifist = yes
 		}
 		modifier = {
-			factor = @giga_tech_weight_boost_large
+			factor = @giga_tech_weight_boost_3
 			has_valid_civic = civic_machine_servitor
 		}
 
 		inline_script = technology/tech_weight_boni/maniacal_or_spark_tech_weight_bonus
 
 		modifier = {
-			factor = @giga_tech_weight_boost_large
+			factor = @giga_tech_weight_boost_3
 			has_galactic_wonders = yes
 		}
 		modifier = {
-			factor = @giga_tech_weight_boost_massive
+			factor = @giga_tech_weight_boost_6
 			has_ascension_perk = ap_master_builders
 		}
 		inline_script = {

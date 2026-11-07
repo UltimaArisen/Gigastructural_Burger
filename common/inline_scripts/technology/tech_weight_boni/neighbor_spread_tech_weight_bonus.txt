@@ -7,7 +7,7 @@
 # }
 
 modifier = {
-	factor = @giga_tech_weight_boost_ten
+	factor = @giga_tech_weight_boost_7
 	any_neighbor_country = {
 		has_technology = $TECHNOLOGY$
 	}

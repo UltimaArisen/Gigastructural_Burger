@@ -1,46 +1,40 @@
-# hiveminds, gene ascended empires, and similar - familiar with genetics and organic engineering
+#To be used with certain society megas like the big vat/seeder nexus
 
 modifier = {
-	factor = @giga_tech_weight_boost_small
+	factor = @giga_tech_weight_boost_1
 	is_hive_empire = yes
 }
 
 modifier = {
-	factor = @giga_tech_weight_boost_medium
+	factor = @giga_tech_weight_boost_1
+	has_technology = tech_gene_tailoring
+}
+
+modifier = {
+	factor = @giga_tech_weight_boost_2
 	has_valid_civic = civic_private_healthcare_corporate
 }
 
 modifier = {
-	factor = @giga_tech_weight_boost_medium
-	is_toxic_baths_empire = yes
-}
-
-modifier = {
-	factor = @giga_tech_weight_boost_large
+	factor = @giga_tech_weight_boost_3
 	is_natural_design_empire = yes
 }
 
 modifier = {
-	factor = @giga_tech_weight_boost_large
+	factor = @giga_tech_weight_boost_3
 	or = {
-		has_origin = origin_progenitor_hive
 		has_origin = origin_overtuned
 		has_origin = origin_fruitful
 	}
 }
 
 modifier = {
-	factor = @giga_tech_weight_boost_greater
+	factor = @giga_tech_weight_boost_4
 	or = {
 		has_ascension_perk = ap_hive_worlds
 		has_ascension_perk = ap_engineered_evolution
 	}
 }
 
-modifier = {
-	factor = @giga_tech_weight_boost_greater
-	or = {
-		is_bugged_life_cult = yes
-	}
-}
+
 

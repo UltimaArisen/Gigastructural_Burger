@@ -1,0 +1,74 @@
+
+
+has_councilor_with_kilo_brain = {
+    OR = {
+        has_trait_in_council = { TRAIT = leader_trait_maniacal }
+        has_trait_in_council = { TRAIT = leader_trait_maniacal_2 }
+        has_trait_in_council = { TRAIT = leader_trait_maniacal_3 }
+        has_trait_in_council = { TRAIT = leader_trait_spark_of_genius }
+        has_trait_in_council = { TRAIT = leader_trait_spark_of_genius_2 }
+        has_trait_in_council = { TRAIT = leader_trait_curator }
+        has_trait_in_council = { TRAIT = leader_trait_expertise_$TRAIT$ }
+    }
+}
+
+
+
+
+# these are meant to be used in techweights where the tech checks for x mega stage to apply a weight factor but if you need any make sure you use the one with the total amount of stages INCLUDING stage 0
+
+
+tech_weight_factor_check_4_stage = { #the reason these arent all in one block is due to the error logs it would put out if it cant find a stage 5 on something like the seeder nexus
+    or = {
+        has_megastructure = $megastructure$_0
+        has_megastructure = $megastructure$_1
+        has_megastructure = $megastructure$_2
+        has_megastructure = $megastructure$_3
+    }
+}
+
+tech_weight_factor_check_5_stage = {
+    or = {
+        has_megastructure = $megastructure$_0
+        has_megastructure = $megastructure$_1
+        has_megastructure = $megastructure$_2
+        has_megastructure = $megastructure$_3
+        has_megastructure = $megastructure$_4
+    }
+}
+
+tech_weight_factor_check_6_stage = { # should be the max number of stages in the mod currently
+    or = {
+        has_megastructure = $megastructure$_0
+        has_megastructure = $megastructure$_1
+        has_megastructure = $megastructure$_2
+        has_megastructure = $megastructure$_3
+        has_megastructure = $megastructure$_4
+        has_megastructure = $megastructure$_5
+    }
+}
+
+tech_weight_factor_check_7_stage = { # unsure if gigas has any megas with this amount of stages but im keeping it anyway
+    or = {
+        has_megastructure = $megastructure$_0
+        has_megastructure = $megastructure$_1
+        has_megastructure = $megastructure$_2
+        has_megastructure = $megastructure$_3
+        has_megastructure = $megastructure$_4
+        has_megastructure = $megastructure$_5
+        has_megastructure = $megastructure$_6
+    }
+}
+
+tech_weight_factor_check_8_stage = { # unsure if gigas has any megas with this amount of stages but im keeping it anyway
+    or = {
+        has_megastructure = $megastructure$_0
+        has_megastructure = $megastructure$_1
+        has_megastructure = $megastructure$_2
+        has_megastructure = $megastructure$_3
+        has_megastructure = $megastructure$_4
+        has_megastructure = $megastructure$_5
+        has_megastructure = $megastructure$_6
+        has_megastructure = $megastructure$_7
+    }
+}

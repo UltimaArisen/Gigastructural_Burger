@@ -3,32 +3,22 @@
 # additionally some bug branch civics that are mega-oriented
 
 modifier = {
-    factor = @giga_tech_weight_boost_small
+    factor = @giga_tech_weight_boost_1
     has_tradition = tr_macroengineering_adopt
 }
 
 modifier = {
-    factor = @giga_tech_weight_boost_large
-    is_bugged_megastructure_civic = yes
-}
-
-modifier = {
-    factor = @giga_tech_weight_boost_large
+    factor = @giga_tech_weight_boost_3
     has_valid_civic = civic_void_hive
 }
 
 modifier = {
-    factor = @giga_tech_weight_boost_large
-    has_galactic_wonders = yes
-}
-
-modifier = {
-    factor = @giga_tech_weight_boost_large
+    factor = @giga_tech_weight_boost_3
     has_tradition = tr_gigaengineering_adopt
 }
 
 modifier = {
-    factor = @giga_tech_weight_boost_massive
+    factor = @giga_tech_weight_boost_6
     has_ascension_perk = ap_master_builders
 }
 

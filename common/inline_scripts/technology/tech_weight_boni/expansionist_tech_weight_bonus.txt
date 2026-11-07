@@ -2,29 +2,32 @@
 # which are boosted by expanionist in vanilla
 
 modifier = {
-	factor = @giga_tech_weight_boost_small
+	factor = @giga_tech_weight_boost_4
 	has_ascension_perk = ap_interstellar_dominion
 }
 
 modifier = {
-	factor = @giga_tech_weight_boost_small
+	factor = @giga_tech_weight_boost_1
 	has_tradition = tr_expansion_adopt
 }
 
 modifier = {
-	factor = @giga_tech_weight_boost_small
+	factor = @giga_tech_weight_boost_1
 	has_tradition = tr_expansion_finish
 }
 
 modifier = {
-	factor = @giga_tech_weight_boost_small
+	factor = @giga_tech_weight_boost_3
 	OR = {
 		has_valid_civic = civic_machine_builder
+		has_valid_civic = civic_functional_architecture
+		is_environmental_architects_empire = yes
+
 	}
 }
 
 modifier = {
-	factor = @giga_tech_weight_boost_greater
+	factor = @giga_tech_weight_boost_6
 	has_ascension_perk = ap_imperial_prerogative
 }
 
